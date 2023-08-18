@@ -1,0 +1,58 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<pre>
+
+
+</pre>
+<div class="wrapper">
+    <div class="login-container">
+        <div class="logo">
+        <img src="https://previews.123rf.com/images/keviz/keviz1803/keviz180301496/102081325-logo-teamwork-unity-holding-hands-educational-concept-icon-vector-template.jpg" alt="" class="image" />
+    </div>
+        <div class="card">
+          <u>  <h3 class="heading text-center" style="font-family: 'Bree Serif';">Login Form</h3></u>
+            <form [formGroup]="regForm" #r="ngForm" (ngSubmit)="onSubmit(r.value)" class="p-3 mt-3">
+                <div class="form-field d-flex align-items-center">
+
+                    <span><i class="fa fa-user"></i></span>
+                    <input placeholder="Enter email" type="text" class="form-control" id="email" formControlName="email" required>
+                </div>  <div *ngIf="regForm.controls['email'].touched && regForm.controls['email']?.['errors']">
+                        <div *ngIf="regForm.controls['email']?.['errors']?.['required']" class="error-message text-danger">
+                            Email is required
+                        </div>
+                    </div>
+              
+                <div class="form-field d-flex align-items-center">
+			<span><i class="fa fa-key"></i></span>
+                    <input placeholder="Enter password" type="password" class="form-control" id="password" formControlName="password" required>
+                </div>   <div *ngIf="regForm.controls['password'].touched && regForm.controls['password']?.['errors']">
+                        <div *ngIf="regForm.controls['password']?.['errors']?.['required']"
+                            class="error-message text-danger">
+                            Password is required
+                        </div>
+                    </div>
+             
+                <button type="submit" class="btn btn-primary mt-4 w-100" [disabled]="regForm.invalid">Sign In</button>
+                <div class="mt-2"><a routerLink="/register" class="mt-2">Don't have an account? click here</a></div>
+            </form>
+        </div>
+    </div>
+</div>
+<pre>
+
+
+
+</pre>
+
+<footer class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" class="text-center"  style="background-color:darkblue; color: white;">
+          <h6>Contact us : 12345678940</h6>
+          <h6>Mail to: union@gmail.com</h6>
+          <p>© 2020 Copyright: Social Media App -- Union</p>
+
+        </div>
+        <!-- Copyright -->
+</footer>

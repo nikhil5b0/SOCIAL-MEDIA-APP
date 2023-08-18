@@ -1,0 +1,27 @@
+<div class="overflow-auto">
+    <h3 style="text-align: center; padding-top: 20px;padding-bottom: 20px;background-color:bisque;">Suggestions</h3>
+<div *ngFor="let u of users">
+    <div  *ngIf="u.username!==user.username">
+<div  class="suggest"  style="padding-left: 10px;">
+    <div  class="d-flex mb-4 p-2 align-items-center justify-content-between" style=" border: 1px solid #c0bfbf;width:310px;background-color: white;">
+        <div *ngIf="!u.avatar">
+            <img src="https://previews.123rf.com/images/tuktukdesign/tuktukdesign1805/tuktukdesign180500193/101755732-avatar-icon-vector-male-person-symbol-circle-user-profile-avatar-sign-in-flat-color-glyph-pictogram.jpg" alt="" height="60px" width="60px">
+          </div>
+        <div *ngIf="u.avatar"> 
+            <img src='{{u.avatar}}' alt="" class="image"></div> 
+        <pre>    </pre>
+        <div class="d-flex flex-column justify-content-between">
+                <h6>{{ u.username }}</h6>
+        </div>
+        <pre>         </pre>
+            <div>
+                <button class="btn btn-primary" *ngIf="!user.followingId.includes(u._id)" 
+                (click)="followUser(u)" style="height:35px">Follow</button>
+                <button class="btn btn-outline-primary" *ngIf="user.followingId.includes(u._id)"
+                (click)="unfollowUser(u)" style="height: 35px;">Unfollow</button>
+            </div>
+    </div>
+</div>
+</div>
+</div>
+</div>

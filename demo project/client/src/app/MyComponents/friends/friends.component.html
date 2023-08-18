@@ -1,0 +1,97 @@
+
+
+<div class="d-flex w-100" style="background-color: #fff;">
+    <app-sidebar></app-sidebar>
+    <div class="friends-container w-100">
+    <div  *ngIf="followersData.length !== 0">
+        <u><h3>Following</h3></u>
+        <div *ngFor="let follower of followersData">
+            <div *ngIf="follower.userId._id === userId">
+                <div class="follower-item d-flex mb-4 p-2" style="gap: 20px; border: 1px solid #c0bfbf;">
+                    
+                <div *ngIf="!follower.followingId.avatar">
+                    <img src="https://previews.123rf.com/images/tuktukdesign/tuktukdesign1805/tuktukdesign180500193/101755732-avatar-icon-vector-male-person-symbol-circle-user-profile-avatar-sign-in-flat-color-glyph-pictogram.jpg" alt="" style="border-radius: 50%; height: 175px; width: 200px;">
+                </div>
+                    <div *ngIf="follower.followingId.avatar">
+                    <img [src]="follower.followingId.avatar" alt="" class="image">
+                </div>
+
+
+                    <div class="d-flex flex-column justify-content-between">
+                        <h1>{{ follower.followingId.username }}</h1>
+                        <div>
+                            <div>
+                                <h5>Followers: {{ follower.followingId.followerId.length}}</h5>
+                            </div>
+                            <div>
+                                <h5>Following: {{ follower.followingId.followingId.length }} </h5>
+                            </div>
+                            <div>
+                                <h5>Posts: {{ follower.followingId.posts }}</h5>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" (click)="sendMessage(follower.followingId._id)">Message</button>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <div *ngIf="followingData.length ===0">
+            <u><h3>Followers</h3></u>
+            <h5>No Followers yet!!</h5>
+        </div>
+    </div>
+    <div *ngIf="followingData.length !== 0">
+        <div *ngIf="followersData.length ===0">
+           <u> <h3>Following</h3></u>
+            <h5>You are not following anyone!!</h5>
+        </div>
+        <u><h3>Followers</h3></u>
+        <div *ngFor="let follower of followingData">
+            <div *ngIf="follower.followingId._id === userId">
+                <div class="follower-item d-flex mb-4 p-2" style="gap: 20px; border: 1px solid #c0bfbf;">
+
+
+                    <div *ngIf="!follower.userId.avatar">
+                        <img src="https://previews.123rf.com/images/tuktukdesign/tuktukdesign1805/tuktukdesign180500193/101755732-avatar-icon-vector-male-person-symbol-circle-user-profile-avatar-sign-in-flat-color-glyph-pictogram.jpg" alt="" style="border-radius: 50%;  height: 175px; width: 200px;">
+                      </div>
+                    
+                    <div *ngIf="follower.userId.avatar">
+                    <img [src]="follower.userId.avatar" alt="" class="image">
+                    </div>
+
+
+                    <div class="d-flex flex-column justify-content-between">
+                        <h1>{{ follower.userId.username }}</h1>
+                        <div>
+                            <div>
+                                <h5>Followers: {{ follower.userId.followerId.length}}</h5>
+                            </div>
+                            <div>
+                                <h5>Following: {{ follower.userId.followingId.length }} </h5>
+                            </div>
+                            <div>
+                                <h5>Posts: {{ follower.userId.posts }}</h5>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" (click)="sendMessage(follower.userId._id)">Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div *ngIf="followersData.length === 0"
+        style="width: 100%; height: 90vh; display: flex;flex-direction: column; justify-content: center; align-items: center;">
+    <div *ngIf="followingData.length === 0"
+        style="width: 100%; height: 90vh; display: flex;flex-direction: column; justify-content: center; align-items: center;">
+        <div  style="width: 100%; height: 90vh; display: flex;flex-direction: column; justify-content: center; align-items: center;">
+        <img src="https://img.freepik.com/premium-vector/little-boy-using-mobile-phone-cry_97632-5090.jpg?w=2000"
+        alt="frnds"  height="400" width="400">
+        <h1>You do not have any friends.</h1></div>
+    </div>
+    </div>
+</div>
+</div>

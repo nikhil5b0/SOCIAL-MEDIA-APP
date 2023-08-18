@@ -1,0 +1,110 @@
+.feeds-container{
+    display: flex;
+    height: 90vh;
+    overflow-x: scroll;
+
+  }
+  
+  
+  .content-container{
+      width:100%;
+      overflow:auto;
+      background-color:white;
+
+  }
+  @media screen and (max-width:768px) {
+      .content-container{
+          width: 100%;
+          padding: 10px;
+          background-color: transparent;
+          border-radius: 0;
+          color: #000;
+      }
+  }
+  
+  
+  .profile-image{
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+  }
+  
+  .posted-user-image{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+  } 
+  
+  .suggestions-container{
+      width: 16%;
+  }
+  @media screen and (max-width:768px) {
+      .suggestions-container{
+          display: none;
+      }
+  }
+  
+  
+  .commented-image{
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+  }
+  
+  @media screen and (max-width:768px) {
+      app-sidebar{
+          display: none;
+      }
+  }
+
+  .image{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+
+  }
+  .image:hover{
+    border-radius: 0;
+  }
+
+  .trending-container{
+    width: 300px;
+    background-color:#e3e3e3;
+    padding: 0px;
+    min-height:100%;
+  }
+  @media screen and (max-width:912px) {
+    .trending-container{
+        display: none;
+    }
+  }
+
+  @media screen and (max-width:768px) {
+    .date{
+        display: none;
+    }
+  }
+
+  @media screen and (max-width:768px) {
+    .image{
+        width: 60px;
+        height: 60px;
+    }
+  }
+
+
+  .story{
+    width: 160px;
+     border-radius: 50%;
+     border-color: blue;
+      float: left;
+
+  
+  }
+
+  @media screen and (max-width:768px) {
+    .story{
+        width: 60px;
+     
+    }
+  }

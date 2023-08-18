@@ -1,0 +1,11 @@
+.create-container{
+    background-color: #c1cbdc;
+    height: 90vh;
+    overflow: auto;
+    padding: 20px;
+}
+.profile-image{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}

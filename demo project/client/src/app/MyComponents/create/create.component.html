@@ -1,0 +1,62 @@
+<div class="d-flex w-100" style="background-color: #fff;">
+<app-sidebar></app-sidebar>
+
+<div class="create-container w-100">
+<div class="card p-4 mb-3">
+    <h1 style="font-size: 32px; font-weight: 600; margin-bottom: 10px;">Create New Post</h1>
+    <div class="d-flex w-100" style="gap: 10px;">
+
+
+        <div *ngIf="!user.avatar">
+            <img src="https://previews.123rf.com/images/tuktukdesign/tuktukdesign1805/tuktukdesign180500193/101755732-avatar-icon-vector-male-person-symbol-circle-user-profile-avatar-sign-in-flat-color-glyph-pictogram.jpg" alt="" height="60px" width="60px">
+          </div>
+
+          <div *ngIf="user.avatar">
+        <img src="{{avatar}}" alt="image" class="profile-image"></div>
+        <div class="w-100">
+            <form class="d-flex flex-column" style="gap: 10px;" [formGroup]="regForm" #r="ngForm"
+                (ngSubmit)="onSubmit(r.value)">
+                <input placeholder="Enter Title" type="text" class="form-control" id="content"
+                    formControlName="content">
+                <input placeholder="Enter Description" type="text" class="form-control" id="description"
+                    formControlName="description">
+                <input type="text" accept="image/*" placeholder="Enter Post URL" class="form-control"
+                    id="mediaUrl" formControlName="mediaUrl">
+                
+                <button class="btn w-100 mt-2"
+                style="background-color: rgb(24, 10, 78); border-radius: 80px; color: #fff;"
+                    type="submit">Post</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="card p-4 mb-3">
+    <h1 style="font-size: 32px; font-weight: 600; margin-bottom: 10px;">Add Story</h1>
+    <div class="d-flex w-100" style="gap: 10px;">
+
+        <div *ngIf="!user.avatar">
+            <img src="https://previews.123rf.com/images/tuktukdesign/tuktukdesign1805/tuktukdesign180500193/101755732-avatar-icon-vector-male-person-symbol-circle-user-profile-avatar-sign-in-flat-color-glyph-pictogram.jpg" alt="" height="60px" width="60px">
+        </div>
+        <div *ngIf="user.avatar">
+        <img src="{{avatar}}" alt="image" class="profile-image"></div>
+        <div class="w-100">
+            <form [formGroup]="storyForm" class="d-flex flex-column" style="gap: 10px;"
+                (ngSubmit)="uploadStory(storyForm.value)">
+                <input placeholder="Enter Title" type="text" class="form-control" id="title"
+                    formControlName="title">
+                <input placeholder="Enter Description (Max 20 characters)" type="text" class="form-control" id="description"
+                    formControlName="description">
+                <input type="text" accept="image/*" placeholder="Enter Post URL" class="form-control"
+                    id="mediaUrl" formControlName="mediaUrl">
+            
+                <button class="btn w-100 mt-2"
+                    style="background-color: rgb(24, 10, 78); border-radius: 80px; color: #fff;" type="submit">Add
+                    Story</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>
